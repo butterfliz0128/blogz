@@ -35,9 +35,12 @@ def index():
     if blog_id:
         blog_obj = Blog.query.filter_by(id=blog_id).first()
         print(blog_obj)
+
+        #blog_obj_list = []
+        #blog_obj_list.append(blog_obj)
    
-        #return render_template('blog_dtl.html',blogs=blog_obj)
-        return render_template('blog_dtl.html',blog_title=blog_obj.title,blog_content=blog_obj.body)
+        return render_template('main_blog.html',blogs=blog_obj)
+        #return render_template('blog_dtl.html',blog_title=blog_obj.title,blog_content=blog_obj.body)
     else:
         return render_template('main_blog.html',blogs=get_blogs())
 
